@@ -165,7 +165,9 @@ BEGIN
     SET AVAILABLESEATS = AVAILABLESEATS + @NumberOfTickets
     WHERE TRAINNO = @TrainNo;
 	
-	
+	 UPDATE Bookings
+    SET Status = 'Inactive'
+    WHERE BookingId = @BookingId;
     -- Insert cancellation details into Cancellation table
     INSERT INTO Cancellation (BookingId, PassengerName, TrainNo, ClassName, NumberOfTickets)
     VALUES (@BookingId, @PassengerName, @TrainNo, @ClassName, @NumberOfTickets);
@@ -177,20 +179,8 @@ EXEC CancelTicket
     @TrainNo = 43212,
     @ClassName = FirstClass,
     @NumberOfTickets = 2;
-------------------------------------------------------------------------------------------------------------------
---------------------soft delete----------------------------------------------------------
--- Create or alter the stored procedure for toggling train status
-CREATE OR ALTER PROCEDURE ToggleTrainStatus
-    @TrainNo INT
-AS
-BEGIN
-    -- Update the IsActive status of the train
-    UPDATE Trains
-    SET Status = CASE WHEN Status = 'Active' THEN 'Inactive' ELSE 'Active' END
-    WHERE TrainNo = @TrainNo;
+	select*from Bookings
+-----------------------------------
+-------------------------------------------------------------------------------
 
-    -- Select and return the updated status of the train
-    SELECT Status
-    FROM Trains
-    WHERE TrainNo = @TrainNo;
-END;
+
