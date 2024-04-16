@@ -128,5 +128,14 @@ namespace Railway_Reservation
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CancelTicket", bookingIdParameter, passengerNameParameter, trainNoParameter, classNameParameter, numberOfTicketsParameter);
         }
+    
+        public virtual ObjectResult<string> ToggleTrainStatus(Nullable<int> trainNo)
+        {
+            var trainNoParameter = trainNo.HasValue ?
+                new ObjectParameter("TrainNo", trainNo) :
+                new ObjectParameter("TrainNo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("ToggleTrainStatus", trainNoParameter);
+        }
     }
 }

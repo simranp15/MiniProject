@@ -158,5 +158,8 @@
       <Parameter Name="ClassName" Mode="In" Type="String" />
       <Parameter Name="NumberOfTickets" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="ToggleTrainStatus" ReturnType="Collection(String)">
+      <Parameter Name="TrainNo" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

@@ -97,19 +97,23 @@ namespace Railway_Reservation
         {
             Console.WriteLine("Now you can access all user authorization ");
             Console.WriteLine("Press 1 for Booking Trains");
-            Console.WriteLine("Press 2 for Cancel Trains");
+            Console.WriteLine("Press 2 for Printing Tickets");
+            Console.WriteLine("Press 3 for Cancel Trains");
             string res = Console.ReadLine();
             switch (res)
             {
                 case "1":
                     Console.WriteLine("Please Book the tickets");
-                   // displaytrain();
-                    //BookingTicket();
-                    Console.WriteLine("Here is your printing ticket");
-                    DisplayBooking_Details();
+                      displaytrain();
+                      BookingTicket();
                     Console.WriteLine("Booking has been successfully completed");
                     break;
-                case "2":
+                    case "2":
+                    Console.WriteLine("For Printing ticket you have to give your booking id");
+                    DisplayBooking_Details();
+                    Console.WriteLine("Here is your printing tickets");
+                    break;
+                case "3":
                     Console.WriteLine("Please Cancel the tickets");
                     Cancel_train();
                     break;

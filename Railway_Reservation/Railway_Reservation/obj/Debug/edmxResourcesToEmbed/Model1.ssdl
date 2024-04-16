@@ -128,6 +128,9 @@
     <Parameter Name="ClassName" Type="varchar" Mode="In" />
     <Parameter Name="NumberOfTickets" Type="int" Mode="In" />
   </Function>
+  <Function Name="ToggleTrainStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TrainNo" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="MiniProjectTrainModelStoreContainer">
     <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
