@@ -139,7 +139,7 @@ BEGIN
         VALUES (@PassengerName, @TrainNo, @ClassName, @DateOfTravel, @NumberOfTickets, @TotalAmount, 'Active');
     END
 END
-
+select*from Trains
 Select*from Bookings
 EXEC BookTrainTicket 
     @PassengerName = 'Shreya',

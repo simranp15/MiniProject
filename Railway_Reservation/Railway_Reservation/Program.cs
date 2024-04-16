@@ -8,45 +8,45 @@ namespace Railway_Reservation
 {
     class Program
     {
-        // craete an object of the context class and instantiate it
+        // Create an object of the context class and instantiate it
         static MiniProjectTrainEntities db = new MiniProjectTrainEntities();
         static Train train = new Train();
         static TicketClassDetail TCD = new TicketClassDetail();
 
-        static void Main(string[] args) { 
-        Console.WriteLine("=======================================");
-       Console.WriteLine("|                                     |");
-       Console.WriteLine("|        Railway Ticket Forum         |");
-       Console.WriteLine("|                                     |");
-       Console.WriteLine("=======================================");
-       Console.WriteLine("|                                     |");
-       Console.WriteLine("|    Welcome to Railway Forum        |");
-       Console.WriteLine("|   Your One-Stop Destination for    |");
-       Console.WriteLine("|        All Your Rail Travel        |");
-       Console.WriteLine("|             Queries                 |");
-       Console.WriteLine("|                                     |");
-       Console.WriteLine("=======================================");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("                                     =======================================               ");
+            Console.WriteLine("                                     |                                     |               ");
+            Console.WriteLine("                             |         Welcome to the Indian Railway Forum     |               ");
+            Console.WriteLine("                                     |                                     |               ");
+            Console.WriteLine("                                     =======================================                ");
+       
 
-            Console.WriteLine("1 for  login as Admin");
-            Console.WriteLine("2 for  login as User");
-            Console.WriteLine("Enter your Choice");
+            Console.WriteLine("\n Press 1 for login as Admin");
+            Console.WriteLine(" Press 2 for login as User");
+            Console.WriteLine(" Press 3 for exit");
+            Console.WriteLine("\n Enter your Choice");
             string Choice = Console.ReadLine();
             switch (Choice)
             {
                 case "1":
-                    Console.WriteLine("You have now admin");
-                    Admincontrol();
+                    Console.WriteLine("\n You have now admin");
+                    Admincontrol();                    
                     break;
                 case "2":
-                    Console.WriteLine("you have now user you have access to user function");
+                    Console.WriteLine("\nYou have now user, you have access to user functions");
                     UserControl();
                     break;
+                case "3":
+                    Console.WriteLine("\nThank You For Your Time....");
+                    break;
                 default:
-                    Console.WriteLine("Enter valid");
+                    Console.WriteLine("\nEnter valid input");
                     break;
             }
             Console.Read();
         }
+
         static void Admincontrol()
         {
             Console.WriteLine("Enter Admin ID:");
@@ -57,74 +57,103 @@ namespace Railway_Reservation
 
             if (admin != null)
             {
-                Console.WriteLine("Admin login successful!");
+                Console.WriteLine("\nAdmin login successful!");
                 Console.WriteLine("Now you can access all admin authorization ");
-                Console.WriteLine("Press 1 for Add Trains");
+                Console.WriteLine("\nPress 1 for Add Trains");
                 Console.WriteLine("Press 2 for Modify Trains");
                 Console.WriteLine("Press 3 for SoftDeleting");
+                Console.WriteLine("Press 4 for Exit");
+                Console.WriteLine("\n Enter your Choice");
+
                 string res = Console.ReadLine();
                 switch (res)
                 {
                     case "1":
                         Console.WriteLine("Please Add The Trains");
                         AddTrain();
-                        Console.WriteLine("Trains has been successfully added");
-                        displaytrain();
+                        Console.WriteLine("Trains have been successfully added");
+                        Console.WriteLine("\n********************************************************************************************************************");
+                        displaytrainForAdmin();
+                        Console.WriteLine("***********************************************************************************************************************");
+
                         break;
                     case "2":
                         Console.WriteLine("Please modify the train");
-                        displaytrain();
+                        Console.WriteLine("\n********************************************************************************************************************");
+                        displaytrainForAdmin();
+                        Console.WriteLine("\n********************************************************************************************************************");
+                        Console.WriteLine("Which Train do you want to modify");
                         ModifyTrain();
                         break;
                     case "3":
                         Console.WriteLine(" Please soft delete the train");
                         DeleteTrain();
-                        displaytrain();
+                        Console.WriteLine("\n********************************************************************************************************************");
+                        displaytrainForAdmin();
+                        Console.WriteLine("\n********************************************************************************************************************");
+                        break;
+                    case "4":
+                        Console.WriteLine("\nThanks for visiting this page");
                         break;
                     default:
-                        Console.WriteLine("Enter valid number");
+                        Console.WriteLine("\nEnter valid number");
                         break;
                 }
             }
             else
             {
-                Console.WriteLine("Invalid admin credentials, you can't access the admincontrol.");
+                Console.WriteLine("\nInvalid admin credentials, you can't access the admincontrol.");
                 Console.ReadLine();
                 Environment.Exit(0);
             }
-            } 
+        }
+
         static void UserControl()
         {
             Console.WriteLine("Now you can access all user authorization ");
             Console.WriteLine("Press 1 for Booking Trains");
             Console.WriteLine("Press 2 for Printing Tickets");
             Console.WriteLine("Press 3 for Cancel Trains");
+            Console.WriteLine("Press 4 for Cancel Trains");
+            Console.WriteLine("Press 5 for Exit");
+            Console.WriteLine("\n Enter your Choice");
+
+
             string res = Console.ReadLine();
             switch (res)
             {
                 case "1":
                     Console.WriteLine("Please Book the tickets");
-                      displaytrain();
-                      BookingTicket();
-                    Console.WriteLine("Booking has been successfully completed");
+                    displaytrainForUser();
+                    BookingTicket();
+                    DisplayAllBooking_Details();
+
                     break;
-                    case "2":
-                    Console.WriteLine("For Printing ticket you have to give your booking id");
+                case "2":
+                    Console.WriteLine("\nFor Printing ticket you have to give your booking id");
                     DisplayBooking_Details();
-                    Console.WriteLine("Here is your printing tickets");
+                    Console.WriteLine("\nHere is your printing tickets");
                     break;
                 case "3":
-                    Console.WriteLine("Please Cancel the tickets");
+                    Console.WriteLine("\nPlease Cancel the tickets");
                     Cancel_train();
+                   // DisplayAllCanceltDetails();
+                    break;
+                case "4":
+                    DisplayCancellationDetails();
+                    Console.WriteLine(" Here is your print of cancel ticket");
+                    break;
+                case "5":
+                    Console.WriteLine("\nThanks for visting this page");
                     break;
                 default:
-                    Console.WriteLine("Enter valid number");
+                    Console.WriteLine("\nEnter valid number");
                     break;
             }
         }
+
         static void AddTrain()
         {
-
             Console.WriteLine("Enter Train Number:");
             train.TrainNo = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Train Name:");
@@ -143,7 +172,7 @@ namespace Railway_Reservation
                 TCD.ClassName = ClassName;
                 Console.WriteLine($"Enter TOTAL SEATS{ClassName}:");
                 TCD.TotalSeats = int.Parse(Console.ReadLine());
-                Console.WriteLine("availble seats:");
+                Console.WriteLine("Available seats:");
                 TCD.AvailableSeats = int.Parse(Console.ReadLine());
                 Console.WriteLine("Enter Fare Amount");
                 TCD.Fare = int.Parse(Console.ReadLine());
@@ -152,38 +181,42 @@ namespace Railway_Reservation
                 db.SaveChanges();
             }
         }
-        static void displaytrain()
-        {
-            var trains = db.Trains.ToList();
 
-            // Display the result in the console
-            foreach (var train in trains)
+        static void displaytrainForAdmin()
+        {
+            var allTrains = db.Trains.ToList();
+
+            // Display all trains including inactive ones for the admin
+            Console.WriteLine("******************************************All Trains**********************************************************");
+            foreach (var train in allTrains)
             {
                 Console.WriteLine($"TrainNo: {train.TrainNo}, TrainName: {train.TrainName}, Source: {train.Source}, Destination: {train.Destination}, Status: {train.Status}");
+                Console.WriteLine("***********************************************************************************************************************");
 
             }
-            displaytickeDisplayTicketClass_Detail();
         }
 
-        static void displaytickeDisplayTicketClass_Detail()
+        static void displaytrainForUser()
         {
+            var activeTrains = db.Trains.Where(t => t.Status == "Active").ToList();
 
-            Console.WriteLine("Enter Train Number:");
-            train.TrainNo = int.Parse(Console.ReadLine());
-            var trainVal = db.TicketClassDetails.Where(t => t.TrainNo == train.TrainNo).ToList();
+            // Display only active trains for the user
+            Console.WriteLine("\n********************************************************************************************************************");
+            Console.WriteLine("                                           Active Trains                                                             ");
+            Console.WriteLine("********************************************************************************************************************");
 
-
-            // Display the result in the console
-            foreach (var ticketClassDetail in trainVal)
+            foreach (var train in activeTrains)
             {
-                Console.WriteLine($"TrainNo: {ticketClassDetail.TrainNo}, ClassName: {ticketClassDetail.ClassName}, TotalSeats: {ticketClassDetail.TotalSeats}, AvailableSeats: {ticketClassDetail.AvailableSeats}, Fare: {ticketClassDetail.Fare}");
-            }
-        }
+                Console.WriteLine($"TrainNo: {train.TrainNo}, TrainName: {train.TrainName}, Source: {train.Source}, Destination: {train.Destination}, Status: {train.Status}");
+                Console.WriteLine("***********************************************************************************************************************");
 
+            }
+
+        }
 
         public static void ModifyTrain()
         {
-            Console.WriteLine("Enter Train Number:");
+            Console.WriteLine("\nEnter Train Number:");
             int trainNo = int.Parse(Console.ReadLine());
 
             // Retrieve the train details from the database
@@ -200,22 +233,22 @@ namespace Railway_Reservation
                 trainToUpdate.Status = Console.ReadLine();
                 // Update the train in the database
                 db.SaveChanges();
-                Console.WriteLine("Train details updated successfully.");
-                Console.WriteLine("Here is the after modification table");
-                displaytrain();
+                Console.WriteLine("\nTrain details updated successfully.");
+                Console.WriteLine("\nHere is the after modification table");
+                displaytrainForAdmin();
                 Console.ReadLine();
                 Environment.Exit(0);
             }
-
             else
             {
                 Console.WriteLine("Train with the provided number does not exist.");
                 Admincontrol();
             }
         }
+
         public static void DeleteTrain()
         {
-            Console.WriteLine("Enter Train Number:");
+            Console.WriteLine("\nEnter Train Number:");
             int trainNo = int.Parse(Console.ReadLine());
 
             // Retrieve the train details from the database
@@ -232,76 +265,86 @@ namespace Railway_Reservation
             else
             {
                 Console.WriteLine("Train with the provided number does not exist.");
-                Admincontrol();
+              
             }
         }
+
         public static void BookingTicket()
         {
             try
             {
-
                 Console.Write("Enter Passenger Name: ");
-                string PassengerName = Console.ReadLine();
+                string passengerName = Console.ReadLine();
 
                 Console.Write("Enter Train Number: ");
-                int TrainNo = Convert.ToInt32(Console.ReadLine());
+                int trainNo = Convert.ToInt32(Console.ReadLine());
+
+                // Check if the train status is active
+                var train = db.Trains.FirstOrDefault(t => t.TrainNo == trainNo && t.Status == "Active");
+                if (train == null)
+                {
+                    Console.WriteLine("Cannot book tickets for an inactive train.");
+                    return; // Exit the method if train is inactive
+                }
 
                 Console.Write("Enter Class Name: ");
-                string ClassName = Console.ReadLine();
+                string className = Console.ReadLine();
 
                 Console.Write("Enter Date of Travel (YYYY-MM-DD): ");
-                DateTime DateOfTravel = Convert.ToDateTime(Console.ReadLine());
+                DateTime dateOfTravel = Convert.ToDateTime(Console.ReadLine());
 
                 Console.Write("Enter Number of Tickets: ");
-                int NumberOfTickets = Convert.ToInt32(Console.ReadLine());
+                int numberOfTickets = Convert.ToInt32(Console.ReadLine());
 
-
-                db.BookTrainTicket(PassengerName, TrainNo, ClassName, DateOfTravel, NumberOfTickets);
+                db.BookTrainTicket(passengerName, trainNo, className, dateOfTravel, numberOfTickets);
                 db.SaveChanges();
 
                 Console.WriteLine("Ticket booked successfully!");
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred: " + ex.Message);
             }
         }
-            static void Cancel_train()
+
+
+        static void Cancel_train()
+        {
+            Console.WriteLine("Enter Booking ID:");
+            int bookingId = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter Passenger Name:");
+            string passengerName = Console.ReadLine();
+
+            Console.WriteLine("Enter Train Number:");
+            int trainNo = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter Class Name:");
+            string className = Console.ReadLine();
+
+            Console.WriteLine("Enter Number of Tickets to Cancel:");
+            int numberOfTickets = int.Parse(Console.ReadLine());
+
+            try
             {
-                
-                    Console.WriteLine("Enter Booking ID:");
-                    int bookingId = int.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Enter Passenger Name:");
-                    string passengerName = Console.ReadLine();
-
-                    Console.WriteLine("Enter Train Number:");
-                    int trainNo = int.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Enter Class Name:");
-                    string className = Console.ReadLine();
-
-                    Console.WriteLine("Enter Number of Tickets to Cancel:");
-                    int numberOfTickets = int.Parse(Console.ReadLine());
-
-            try {   
-                    // Call the stored procedure to cancel the ticket
-                    db.CancelTicket(bookingId, passengerName, trainNo, className, numberOfTickets);
-                    db.SaveChanges();
-                    Console.WriteLine("Cancellation successful!");
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"An error occurred: {ex.Message}");
-                }
+                // Call the stored procedure to cancel the ticket
+                db.CancelTicket(bookingId, passengerName, trainNo, className, numberOfTickets);
+                db.SaveChanges();
+                Console.WriteLine("Cancellation successful!");
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+
         static void DisplayBooking_Details()
         {
-             Console.WriteLine("Enter Booking ID:");
-                int bookingId = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Booking ID:");
+            int bookingId = int.Parse(Console.ReadLine());
 
-                var booking = db.Bookings.FirstOrDefault(b => b.BookingId == bookingId);
+            var booking = db.Bookings.FirstOrDefault(b => b.BookingId == bookingId);
             if (booking != null)
             {
                 Console.WriteLine("╔═════════════════════════════════════════╗");
@@ -316,15 +359,99 @@ namespace Railway_Reservation
                 Console.WriteLine($"║ Total Amount:     {booking.TotalAmount}║");
                 Console.WriteLine($"║ Status:           {booking.Status}║");
                 Console.WriteLine("╚═════════════════════════════════════════╝");
-
-
             }
             else
             {
                 Console.WriteLine("Booking not found.");
             }
         }
+        static void DisplayAllBooking_Details()
+        {
+            try
+            {
+                Console.WriteLine("************************************************************************");
+                Console.WriteLine("                           BOOKING DETAILS                              ");
+                Console.WriteLine(" ********************************************************************** ");
+
+                Console.WriteLine("| Booking ID | Train ID | Passenger Name | Class Name | Total Tickets | Booking Status | Book Amount |");
+
+                foreach (var book in db.Bookings)
+                {
+                    Console.WriteLine("\n| {0,-10} | {1,-8} | {2,-10} | {3,-12} | {4,-14} | {5,-15} | {6,-14} |",
+                        book.BookingId, book.TrainNo, book.PassengerName, book.ClassName,
+                        book.NumberOfTickets, book.Status, book.TotalAmount);
+                }
+
+                if (!db.Bookings.Any())
+                {
+                    Console.WriteLine("\nNo bookings found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+        static void DisplayCancellationDetails()
+        {
+            try
+            {
+                Console.WriteLine("Enter Booking ID:");
+                int bookingId = int.Parse(Console.ReadLine());
+
+                var cancellation = db.Cancellations.FirstOrDefault(c => c.BookingId == bookingId);
+                if (cancellation != null)
+                {
+                    Console.WriteLine("╔═════════════════════════════════════════╗");
+                    Console.WriteLine("║           CANCELLATION DETAILS           ║");
+                    Console.WriteLine("╠═════════════════════════════════════════╣");
+                    Console.WriteLine($"║ Booking ID:       {cancellation.BookingId}║");
+                    Console.WriteLine($"║ Passenger Name:   {cancellation.PassengerName}║");
+                    Console.WriteLine($"║ Train Number:     {cancellation.TrainNo}║");
+                    Console.WriteLine($"║ Class Name:       {cancellation.ClassName}║");
+                    Console.WriteLine($"║ Number of Tickets:{cancellation.NumberOfTickets}║");
+                    Console.WriteLine("╚═════════════════════════════════════════╝");
+                }
+                else
+                {
+                    Console.WriteLine("Cancellation details not found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+
+        static void DisplayAllCanceltDetails()
+        {
+            try
+            {
+                Console.WriteLine("\n******************************************************************************");
+                Console.WriteLine("                          ALL CANCELED TICKET DETAILS                         ");
+                Console.WriteLine("\n*****************************************************************************");
+
+                Console.WriteLine("\n| Cancel ID |     Date of Cancel    | Train ID | No. of Tickets |  Booking ID |");
+
+                foreach (var cancel in db.Cancellations)
+                {
+                    Console.WriteLine("| {0,-9} | {1,-15} | {2,-8} | {3,-14} | {4,-11} |",
+                        cancel.CancellationId, cancel.DateOfCancel, cancel.TrainNo,
+                        cancel.NumberOfTickets, cancel.BookingId);
+                }
+
+                if (!db.Cancellations.Any())
+                {
+                    Console.WriteLine("\nNo canceled tickets found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nAn error occurred: {ex.Message}");
+            }
+        }
 
     }
-}
 
+
+}
