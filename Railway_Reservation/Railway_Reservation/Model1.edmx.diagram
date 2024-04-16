@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f54f4ec21f204bbdb5b94d2d8cd2b8c3" Name="Diagram1">
+        <EntityTypeShape EntityType="MiniProjectTrainModel.Admin" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiniProjectTrainModel.Booking" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiniProjectTrainModel.Cancellation" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiniProjectTrainModel.TicketClassDetail" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MiniProjectTrainModel.Train" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="MiniProjectTrainModel.FK__Bookings__Status__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="MiniProjectTrainModel.FK__Cancellat__Booki__2B0A656D" ManuallyRouted="false" />
+        <AssociationConnector Association="MiniProjectTrainModel.FK__Cancellat__Train__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="MiniProjectTrainModel.FK__TicketClas__Fare__208CD6FA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

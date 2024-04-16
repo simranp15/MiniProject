@@ -1,0 +1,12 @@
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\bin\Debug\Railway_Reservation.exe.config
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\bin\Debug\Railway_Reservation.exe
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\bin\Debug\Railway_Reservation.pdb
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\bin\Debug\EntityFramework.dll
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\bin\Debug\EntityFramework.SqlServer.dll
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\bin\Debug\EntityFramework.xml
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\bin\Debug\EntityFramework.SqlServer.xml
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\obj\Debug\Railway_Reservation.csproj.AssemblyReference.cache
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\obj\Debug\Railway_Reservation.csproj.CoreCompileInputs.cache
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\obj\Debug\Railway_Reservation.csproj.CopyComplete
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\obj\Debug\Railway_Reservation.exe
+D:\DOTNET_TRAINING\Mini_Project\Railway_Reservation\Railway_Reservation\obj\Debug\Railway_Reservation.pdb
