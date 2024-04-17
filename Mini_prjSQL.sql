@@ -97,10 +97,10 @@ end
 exec DisplayTrain
 
 --------------------------------------------
-
-
-
-
+select* from Bookings
+drop table Cancellation
+select*from Cancellation
+drop proc CancelTicket
 ------------------------------------------
 CREATE OR ALTER PROCEDURE BookTrainTicket
     @PassengerName VARCHAR(50),
@@ -180,6 +180,7 @@ EXEC CancelTicket
     @ClassName = FirstClass,
     @NumberOfTickets = 2;
 	select*from Bookings
+	select*from TicketClassDetail
 -----------------------------------
 -------------------------------------------------------------------------------
 

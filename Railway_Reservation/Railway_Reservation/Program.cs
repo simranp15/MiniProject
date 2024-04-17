@@ -20,33 +20,34 @@ namespace Railway_Reservation
             Console.WriteLine("                             |         Welcome to the Indian Railway Forum     |               ");
             Console.WriteLine("                                     |                                     |               ");
             Console.WriteLine("                                     =======================================                ");
-       
-
-            Console.WriteLine("\n Press 1 for login as Admin");
-            Console.WriteLine(" Press 2 for login as User");
-            Console.WriteLine(" Press 3 for exit");
-            Console.WriteLine("\n Enter your Choice");
-            string Choice = Console.ReadLine();
-            switch (Choice)
+            while (true)
             {
-                case "1":
-                    Console.WriteLine("\n You have now admin");
-                    Admincontrol();                    
-                    break;
-                case "2":
-                    Console.WriteLine("\nYou have now user, you have access to user functions");
-                    UserControl();
-                    break;
-                case "3":
-                    Console.WriteLine("\nThank You For Your Time....");
-                    break;
-                default:
-                    Console.WriteLine("\nEnter valid input");
-                    break;
-            }
-            Console.Read();
-        }
 
+                Console.WriteLine("\n Press 1 for login as Admin");
+                Console.WriteLine(" Press 2 for login as User");
+                Console.WriteLine(" Press 3 for exit");
+                Console.WriteLine("\n Enter your Choice");
+                string Choice = Console.ReadLine();
+                switch (Choice)
+                {
+                    case "1":
+                        Console.WriteLine("\n You have now admin");
+                        Admincontrol();
+                        break;
+                    case "2":
+                        Console.WriteLine("\nYou have now user, you have access to user functions");
+                        UserControl();
+                        break;
+                    case "3":
+                        Console.WriteLine("\nThank You For Your Time....");
+                        break;
+                    default:
+                        Console.WriteLine("\nEnter valid input");
+                        break;
+                }
+                Console.Read();
+            }
+        }   //--------------------------------------Admin Control--------------------------------------------------------------------------------------------------------------------
         static void Admincontrol()
         {
             Console.WriteLine("Enter Admin ID:");
@@ -54,104 +55,109 @@ namespace Railway_Reservation
             Console.WriteLine("Enter Password:");
             string Password = Console.ReadLine();
             var admin = db.Admins.FirstOrDefault(a => a.AdminId == AdminId && a.Password == Password);
-
-            if (admin != null)
+            while (true)
             {
-                Console.WriteLine("\nAdmin login successful!");
-                Console.WriteLine("Now you can access all admin authorization ");
-                Console.WriteLine("\nPress 1 for Add Trains");
-                Console.WriteLine("Press 2 for Modify Trains");
-                Console.WriteLine("Press 3 for SoftDeleting");
-                Console.WriteLine("Press 4 for Exit");
+                if (admin != null)
+                {
+                    Console.WriteLine("\nAdmin login successful!");
+                    Console.WriteLine("Now you can access all admin authorization ");
+                    Console.WriteLine("\nPress 1 for Add Trains");
+                    Console.WriteLine("Press 2 for Modify Trains");
+                    Console.WriteLine("Press 3 for SoftDeleting");
+                    Console.WriteLine("Press 4 for logout");
+                    Console.WriteLine("\n Enter your Choice");
+
+                    string res = Console.ReadLine();
+                    switch (res)
+                    {
+                        case "1":
+                            Console.WriteLine("Please Add The Trains");
+                            AddTrain();
+                            Console.WriteLine("Trains have been successfully added");
+                            Console.WriteLine("\n********************************************************************************************************************");
+                            displaytrainForAdmin();
+                            DisplayAllTicketClassDetailsForAdmin();
+                            break;
+                        case "2":
+                            Console.WriteLine("Please modify the train");
+                            Console.WriteLine("\n********************************************************************************************************************");
+                            displaytrainForAdmin();
+                            Console.WriteLine("\n********************************************************************************************************************");
+                            Console.WriteLine("Which Train do you want to modify");
+                            ModifyTrain();
+                            break;
+                        case "3":
+                            Console.WriteLine(" Please soft delete the train");
+                            DeleteTrain();
+                            Console.WriteLine("\n********************************************************************************************************************");
+                            displaytrainForAdmin();
+                            Console.WriteLine("\n********************************************************************************************************************");
+                            break;
+                        case "4":
+                            Console.WriteLine("\nThanks for visiting this page");
+                            break;
+                        default:
+                            Console.WriteLine("\nEnter valid number");
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid admin credentials, you can't access the admincontrol.");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                }
+            }
+        }
+        //--------------------------------------User Control--------------------------------------------------------------------------------------------------------------------
+        static void UserControl()
+        {
+            while (true)
+            {
+                Console.WriteLine("Now you can access all user authorization ");
+                Console.WriteLine("Press 1 for Booking Trains");
+                Console.WriteLine("Press 2 for Printing Tickets");
+                Console.WriteLine("Press 3 for Cancel the tickets");
+                Console.WriteLine("Press 4 for Printing Cancel Ticket");
+                Console.WriteLine("Press 5 for Exit");
                 Console.WriteLine("\n Enter your Choice");
+
 
                 string res = Console.ReadLine();
                 switch (res)
                 {
                     case "1":
-                        Console.WriteLine("Please Add The Trains");
-                        AddTrain();
-                        Console.WriteLine("Trains have been successfully added");
-                        Console.WriteLine("\n********************************************************************************************************************");
-                        displaytrainForAdmin();
-                        Console.WriteLine("***********************************************************************************************************************");
+                        Console.WriteLine("Please Book the tickets");
+                        displaytrainForUser();
+                        DisplayAllTicketClassDetailsForUser();
+                        BookingTicket();
+                        DisplayAllBooking_Details();
 
                         break;
                     case "2":
-                        Console.WriteLine("Please modify the train");
-                        Console.WriteLine("\n********************************************************************************************************************");
-                        displaytrainForAdmin();
-                        Console.WriteLine("\n********************************************************************************************************************");
-                        Console.WriteLine("Which Train do you want to modify");
-                        ModifyTrain();
+                        Console.WriteLine("\nFor Printing ticket you have to give your booking id");
+                        DisplayBooking_Details();
+                        Console.WriteLine("\nHere is your printing tickets");
                         break;
                     case "3":
-                        Console.WriteLine(" Please soft delete the train");
-                        DeleteTrain();
-                        Console.WriteLine("\n********************************************************************************************************************");
-                        displaytrainForAdmin();
-                        Console.WriteLine("\n********************************************************************************************************************");
+                        Console.WriteLine("\nPlease Cancel the tickets");
+                        Cancel_Ticket();
+                        DisplayAllCanceltDetails();
                         break;
                     case "4":
-                        Console.WriteLine("\nThanks for visiting this page");
+                        DisplayCancellationDetails();
+                        Console.WriteLine(" Here is your print of cancel ticket");
+                        break;
+                    case "5":
+                        Console.WriteLine("\nThanks for visting this page");
                         break;
                     default:
                         Console.WriteLine("\nEnter valid number");
                         break;
                 }
             }
-            else
-            {
-                Console.WriteLine("\nInvalid admin credentials, you can't access the admincontrol.");
-                Console.ReadLine();
-                Environment.Exit(0);
-            }
         }
-
-        static void UserControl()
-        {
-            Console.WriteLine("Now you can access all user authorization ");
-            Console.WriteLine("Press 1 for Booking Trains");
-            Console.WriteLine("Press 2 for Printing Tickets");
-            Console.WriteLine("Press 3 for Cancel Trains");
-            Console.WriteLine("Press 4 for Cancel Trains");
-            Console.WriteLine("Press 5 for Exit");
-            Console.WriteLine("\n Enter your Choice");
-
-
-            string res = Console.ReadLine();
-            switch (res)
-            {
-                case "1":
-                    Console.WriteLine("Please Book the tickets");
-                    displaytrainForUser();
-                    BookingTicket();
-                    DisplayAllBooking_Details();
-
-                    break;
-                case "2":
-                    Console.WriteLine("\nFor Printing ticket you have to give your booking id");
-                    DisplayBooking_Details();
-                    Console.WriteLine("\nHere is your printing tickets");
-                    break;
-                case "3":
-                    Console.WriteLine("\nPlease Cancel the tickets");
-                    Cancel_train();
-                   // DisplayAllCanceltDetails();
-                    break;
-                case "4":
-                    DisplayCancellationDetails();
-                    Console.WriteLine(" Here is your print of cancel ticket");
-                    break;
-                case "5":
-                    Console.WriteLine("\nThanks for visting this page");
-                    break;
-                default:
-                    Console.WriteLine("\nEnter valid number");
-                    break;
-            }
-        }
-
+        //--------------------------------------Add Train--------------------------------------------------------------------------------------------------------------------
         static void AddTrain()
         {
             Console.WriteLine("Enter Train Number:");
@@ -196,6 +202,36 @@ namespace Railway_Reservation
             }
         }
 
+        static void DisplayAllTicketClassDetailsForAdmin()
+        {
+            try
+            {
+                var allTicketClassDetails = db.TicketClassDetails.ToList();
+
+                Console.WriteLine("\n********************************************************************************************************************");
+                Console.WriteLine("                                      ALL TICKET CLASS DETAILS                                                     ");
+                Console.WriteLine("********************************************************************************************************************");
+
+                Console.WriteLine("| Train No | Class Name | Total Seats | Available Seats | Fare Amount |");
+
+                foreach (var ticketClassDetail in allTicketClassDetails)
+                {
+                    Console.WriteLine("| {0,-9} | {1,-10} | {2,-11} | {3,-16} | {4,-11} |",
+                        ticketClassDetail.TrainNo, ticketClassDetail.ClassName, ticketClassDetail.TotalSeats,
+                        ticketClassDetail.AvailableSeats, ticketClassDetail.Fare);
+                }
+
+                if (!allTicketClassDetails.Any())
+                {
+                    Console.WriteLine("\nNo ticket class details found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nAn error occurred: {ex.Message}");
+            }
+        }
+
         static void displaytrainForUser()
         {
             var activeTrains = db.Trains.Where(t => t.Status == "Active").ToList();
@@ -213,6 +249,45 @@ namespace Railway_Reservation
             }
 
         }
+        static void DisplayAllTicketClassDetailsForUser()
+        {
+            try
+            {
+                // Fetch ticket class details for active trains using an inner join
+                var allTicketClassDetails = from train in db.Trains
+                                            join ticketClassDetail in db.TicketClassDetails
+                                            on train.TrainNo equals ticketClassDetail.TrainNo
+                                            where train.Status == "Active"
+                                            select ticketClassDetail;
+
+                if (allTicketClassDetails.Any())
+                {
+                    Console.WriteLine("\n********************************************************************************************************************");
+                    Console.WriteLine("                                      AVAILABLE TICKET CLASS DETAILS                                               ");
+                    Console.WriteLine("********************************************************************************************************************");
+
+                    Console.WriteLine("| Train No | Class Name | Total Seats | Available Seats | Fare Amount |");
+
+                    foreach (var ticketClassDetail in allTicketClassDetails)
+                    {
+                        Console.WriteLine("| {0,-9} | {1,-10} | {2,-11} | {3,-16} | {4,-11} |",
+                            ticketClassDetail.TrainNo, ticketClassDetail.ClassName, ticketClassDetail.TotalSeats,
+                            ticketClassDetail.AvailableSeats, ticketClassDetail.Fare);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("\nNo ticket class details found.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"\nAn error occurred: {ex.Message}");
+            }
+        }
+
+
+        //--------------------------------------Modify Train--------------------------------------------------------------------------------------------------------------------
 
         public static void ModifyTrain()
         {
@@ -246,6 +321,7 @@ namespace Railway_Reservation
             }
         }
 
+        //--------------------------------------Delete Train--------------------------------------------------------------------------------------------------------------------
         public static void DeleteTrain()
         {
             Console.WriteLine("\nEnter Train Number:");
@@ -265,15 +341,16 @@ namespace Railway_Reservation
             else
             {
                 Console.WriteLine("Train with the provided number does not exist.");
-              
+
             }
         }
 
+        //--------------------------------------Booking Ticket--------------------------------------------------------------------------------------------------------------------
         public static void BookingTicket()
         {
             try
             {
-                Console.Write("Enter Passenger Name: ");
+                Console.Write("\nEnter Passenger Name: ");
                 string passengerName = Console.ReadLine();
 
                 Console.Write("Enter Train Number: ");
@@ -283,7 +360,8 @@ namespace Railway_Reservation
                 var train = db.Trains.FirstOrDefault(t => t.TrainNo == trainNo && t.Status == "Active");
                 if (train == null)
                 {
-                    Console.WriteLine("Cannot book tickets for an inactive train.");
+                    Console.WriteLine("\nCannot book tickets for an inactive train.");
+                    Console.WriteLine("You can only book ticket for active train \n So please enter valid train number");
                     return; // Exit the method if train is inactive
                 }
 
@@ -308,10 +386,10 @@ namespace Railway_Reservation
             }
         }
 
-
-        static void Cancel_train()
+        //--------------------------------------Cancel Ticket--------------------------------------------------------------------------------------------------------------------
+        static void Cancel_Ticket()
         {
-            Console.WriteLine("Enter Booking ID:");
+            Console.WriteLine("\nEnter Booking ID:");
             int bookingId = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter Passenger Name:");
@@ -341,7 +419,7 @@ namespace Railway_Reservation
 
         static void DisplayBooking_Details()
         {
-            Console.WriteLine("Enter Booking ID:");
+            Console.WriteLine("\nEnter Booking ID:");
             int bookingId = int.Parse(Console.ReadLine());
 
             var booking = db.Bookings.FirstOrDefault(b => b.BookingId == bookingId);
@@ -369,9 +447,9 @@ namespace Railway_Reservation
         {
             try
             {
-                Console.WriteLine("************************************************************************");
-                Console.WriteLine("                           BOOKING DETAILS                              ");
-                Console.WriteLine(" ********************************************************************** ");
+                Console.WriteLine("****************************************************************************************************************");
+                Console.WriteLine("                                    BOOKING DETAILS                              ");
+                Console.WriteLine(" ***************************************************************************************************************** ");
 
                 Console.WriteLine("| Booking ID | Train ID | Passenger Name | Class Name | Total Tickets | Booking Status | Book Amount |");
 
@@ -396,7 +474,7 @@ namespace Railway_Reservation
         {
             try
             {
-                Console.WriteLine("Enter Booking ID:");
+                Console.WriteLine("\nEnter Booking ID:");
                 int bookingId = int.Parse(Console.ReadLine());
 
                 var cancellation = db.Cancellations.FirstOrDefault(c => c.BookingId == bookingId);
@@ -422,7 +500,6 @@ namespace Railway_Reservation
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
-
         static void DisplayAllCanceltDetails()
         {
             try
