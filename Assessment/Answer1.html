@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+  
+<script>
+    function calculate(operation) {
+        var num1 = parseFloat(document.getElementById("number1").value);
+        var num2 = parseFloat(document.getElementById("number2").value);
+     
+        if (operation === 'Multiply') {
+            var result = number1 * number2;
+        } else if (operation === 'Divide') {
+            if (num2 === 0) {
+                alert("Cannot divide by zero!");
+                return;
+            }
+            var result = num1 / num2;
+        }
+       
+        document.getElementById("result").innerText = "The Result is: " + result;
+    }
+</script>
+</head>
+<body>
+    <label for="number1">1st Number : </label>
+    <input type="text" id="number1">
+    <br>
+    <label for="number2">2nd Number : </label>
+    <input type="text" id="number2">
+    <br>
+    <button onclick="calculate('Multiply')">Multiply</button>
+    <button onclick="calculate('Divide')">Divide</button>
+    <br>
+    <div id="result"></div>
+</body>
+</html>
+ 
+ 

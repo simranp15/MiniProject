@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd_Even_Number</title>
+</head>
+ 
+<body>
+    <h1></h1>
+    <div id="output"></div>
+ 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var outputDiv = document.getElementById("output");
+ 
+            // Loop
+            for (var i = 0; i <= 15; i++) {
+                if (i % 2 === 0) {
+                    // for Even 
+                    outputDiv.innerHTML += i + " is even<br>";
+                } else {
+                    //for Odd 
+                    outputDiv.innerHTML += i + " is odd<br>";
+                }
+            }
+        });
+    </script>
+ 
+</body>
+</html>
