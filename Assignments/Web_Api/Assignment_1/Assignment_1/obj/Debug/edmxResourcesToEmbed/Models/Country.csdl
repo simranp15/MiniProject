@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Traning_PracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CountryName" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="Capital" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Productname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="QuantityAvailable" Type="Int32" />
+    <NavigationProperty Name="ProductSales" Relationship="Self.FK__ProductSa__Produ__4BAC3F29" FromRole="Products" ToRole="ProductSales" />
+  </EntityType>
+  <EntityType Name="ProductSale">
+    <Key>
+      <PropertyRef Name="SaleId" />
+    </Key>
+    <Property Name="SaleId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="QuantitySold" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__ProductSa__Produ__4BAC3F29" FromRole="ProductSales" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="sampletable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="val" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbleDepartment">
+    <Key>
+      <PropertyRef Name="DeptId" />
+    </Key>
+    <Property Name="DeptId" Type="Int32" Nullable="false" />
+    <Property Name="DeptName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DeptLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Budget" Type="Double" />
+    <NavigationProperty Name="tblEmployees" Relationship="Self.FK__tblEmploy__DeptI__38996AB5" FromRole="tbleDepartment" ToRole="tblEmployee" />
+  </EntityType>
+  <EntityType Name="tblEmployee">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="Int32" Nullable="false" />
+    <Property Name="EmpName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="7" FixedLength="true" Unicode="false" />
+    <Property Name="Salary" Type="Double" />
+    <Property Name="DeptId" Type="Int32" />
+    <NavigationProperty Name="tbleDepartment" Relationship="Self.FK__tblEmploy__DeptI__38996AB5" FromRole="tblEmployee" ToRole="tbleDepartment" />
+  </EntityType>
+  <Association Name="FK__ProductSa__Produ__4BAC3F29">
+    <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="ProductSales" Type="Self.ProductSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="ProductSales">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEmploy__DeptI__38996AB5">
+    <End Role="tbleDepartment" Type="Self.tbleDepartment" Multiplicity="0..1" />
+    <End Role="tblEmployee" Type="Self.tblEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbleDepartment">
+        <PropertyRef Name="DeptId" />
+      </Principal>
+      <Dependent Role="tblEmployee">
+        <PropertyRef Name="DeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Traning_PracticeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductSales" EntityType="Self.ProductSale" />
+    <EntitySet Name="sampletables" EntityType="Self.sampletable" />
+    <EntitySet Name="tbleDepartments" EntityType="Self.tbleDepartment" />
+    <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
+    <AssociationSet Name="FK__ProductSa__Produ__4BAC3F29" Association="Self.FK__ProductSa__Produ__4BAC3F29">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="ProductSales" EntitySet="ProductSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEmploy__DeptI__38996AB5" Association="Self.FK__tblEmploy__DeptI__38996AB5">
+      <End Role="tbleDepartment" EntitySet="tbleDepartments" />
+      <End Role="tblEmployee" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <FunctionImport Name="adddata">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="v" Mode="In" Type="String" />
+      <Parameter Name="res" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GenerateMultiplication">
+      <Parameter Name="num" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GSQL">
+      <Parameter Name="max_number" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sales">
+      <Parameter Name="pid" Mode="In" Type="Int32" />
+      <Parameter Name="qty_to_sell" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
