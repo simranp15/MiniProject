@@ -1,0 +1,21 @@
+﻿@model List<Question_1_Mvc.Models.Customer>
+@{
+    ViewBag.Title = "GermanyCustomers";
+}
+
+<h2>GermanyCustomers</h2>
+<table>
+    <tr>
+        <th>Customer ID</th>
+        <th>Company Name</th>
+        <th>Contact Name</th>
+    </tr>
+    @foreach (var Customers in Model)
+    {
+        <tr>
+            <td>@Customers.CustomerID</td>
+            <td>@Customers.CompanyName</td>
+            <td>@Customers.ContactName</td>
+        </tr>
+    }
+</table>

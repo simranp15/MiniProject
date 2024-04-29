@@ -1,0 +1,2 @@
+D:\DOTNET_TRAINING\Mini_Project\Assessment\Assessment_2 MVC\Question_2\Question_2\obj\Debug\Question_2.csproj.AssemblyReference.cache
+D:\DOTNET_TRAINING\Mini_Project\Assessment\Assessment_2 MVC\Question_2\Question_2\obj\Debug\Question_2.csproj.CoreCompileInputs.cache
