@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Question_2.Models;
 using Question_2.Models.Repository;
 
-namespace Question_2.Controllers
+
+
+namespace Question_2.Models.Repository
 {
-    public class MovieController : Controller
+    public class MoviesController : Controller
     {
-        IMovieRepository<T> _movieRepo = null;
+        IMovieRepository<Movie> _movieRepo = null;
 
         public MoviesController()
         {
-            _movieRepo = new MovieRepository();
+            _movieRepo = new MovieRepository<Movie>();
         }
 
         // GET: Movies
@@ -56,10 +59,7 @@ namespace Question_2.Controllers
                 _movieRepo.Save();
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return View(movie);
-            }
+            return View(movie);
         }
 
         public ActionResult Details(int id)
@@ -76,16 +76,12 @@ namespace Question_2.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteConfirmed(int id)
         {
             _movieRepo.Delete(id);
             _movieRepo.Save();
             return RedirectToAction("Index");
         }
     }
-
-    internal interface IMovieRepository<T>
-    {
-    }
 }
-    
+

@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace Question_2.Models.Repository
 {
-    public interface IMovieRepository
+    public interface IMovieRepository<T> where T : class
     {
-        IEnumerable<Movie> GetAllMovies();
-        Movie GetMovieById(int id);
-        void AddMovie(Movie movie);
-        void EditMovie(Movie movie);
-        void DeleteMovie(int id);
-        IEnumerable<Movie> GetMoviesReleasedInYear(int year);
+        IEnumerable<T> GetAll();
+        T GetById(int Id);
+        void Insert(T movie);
+        void Update(T movie);
+        void Delete(int Id);
+        void Save();
     }
-    
 }
-

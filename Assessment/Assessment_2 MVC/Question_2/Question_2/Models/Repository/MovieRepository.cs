@@ -1,44 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Question_2.Models;
-using System.Data.Entity;
-using Question_2.Controllers;
 
 namespace Question_2.Models.Repository
 {
-    public class MovieRepository<Movie> : IMovieRepository<Movie>where Movie : class
+    public class MovieRepository<T> : IMovieRepository<T> where T : class
     {
         MovieContext db;
-        DbSet<Movie>dbSet;
+        DbSet<T> dbSet;
 
         public MovieRepository()
         {
             db = new MovieContext();
-            dbSet = db.Set<Movie>();
+            dbSet = db.Set<T>();
         }
 
         public void Delete(int id)
         {
-               Movie movie = dbSet.Find(id);
-            if (movie != null)
-                dbSet.Remove(movie);
+            T entity = dbSet.Find(id);
+            if (entity != null)
+                dbSet.Remove(entity);
         }
 
-        public IEnumerable<Movie> GetAll()
+        public IEnumerable<T> GetAll()
         {
             return dbSet.ToList();
         }
 
-        public Movie GetById(int id)
+        public T GetById(int id)
         {
             return dbSet.Find(id);
         }
 
-        public void Insert(Movie movie)
+        public void Insert(T entity)
         {
-            dbSet.Add(movie);
+            dbSet.Add(entity);
         }
 
         public void Save()
@@ -46,25 +45,12 @@ namespace Question_2.Models.Repository
             db.SaveChanges();
         }
 
-        public void Update(Movie movie)
+        public void Update(T entity)
         {
-            db.Entry(movie).State = EntityState.Modified;
+            db.Entry(entity).State = EntityState.Modified;
         }
 
-        public IEnumerable<Movie>GetMoviesReleasedInYear(int year)
-        {
-            return dbSet.Where(m => m.DateofRelease.Year == year).ToList();
-        }
-
-        public Movie GetById(object Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(object Id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
+
 }
-       
