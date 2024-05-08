@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\views\\order\\placeorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\views\\order\\placeorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\repository\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\views\\order\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|d:\\dotnet_training\\mini_project\\assessment\\assessment 3 asp.netcore_mvc\\ekartapplication\\ekartapplication\\models\\northwindcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A625E18F-1131-4323-90D7-193F45E703B7}|EkartApplication\\EkartApplication.csproj|solutionrelative:ekartapplication\\models\\northwindcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Program.cs",
+              "RelativeDocumentMoniker": "EkartApplication\\Program.cs",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Program.cs",
+              "RelativeToolTip": "EkartApplication\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:26:12.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\appsettings.json",
+              "RelativeDocumentMoniker": "EkartApplication\\appsettings.json",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\appsettings.json",
+              "RelativeToolTip": "EkartApplication\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-08T05:24:12.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "EkartApplication\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "EkartApplication\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAgwBAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:05:54.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "EkartApplication\\Models\\Order.cs",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Models\\Order.cs",
+              "RelativeToolTip": "EkartApplication\\Models\\Order.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAowCwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T04:57:29.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Repository\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "EkartApplication\\Repository\\IOrderRepository.cs",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Repository\\IOrderRepository.cs",
+              "RelativeToolTip": "EkartApplication\\Repository\\IOrderRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T04:39:30.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlaceOrder.cshtml",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Order\\PlaceOrder.cshtml",
+              "RelativeDocumentMoniker": "EkartApplication\\Views\\Order\\PlaceOrder.cshtml",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Order\\PlaceOrder.cshtml",
+              "RelativeToolTip": "EkartApplication\\Views\\Order\\PlaceOrder.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T06:35:49.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Repository\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "EkartApplication\\Repository\\OrderRepository.cs",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Repository\\OrderRepository.cs",
+              "RelativeToolTip": "EkartApplication\\Repository\\OrderRepository.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T04:40:39.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Order\\Index.cshtml",
+              "RelativeDocumentMoniker": "EkartApplication\\Views\\Order\\Index.cshtml",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Order\\Index.cshtml",
+              "RelativeToolTip": "EkartApplication\\Views\\Order\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T06:47:57.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Order\\Details.cshtml",
+              "RelativeDocumentMoniker": "EkartApplication\\Views\\Order\\Details.cshtml",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Order\\Details.cshtml",
+              "RelativeToolTip": "EkartApplication\\Views\\Order\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T06:40:48.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EkartApplication\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EkartApplication\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-08T06:25:51.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NorthwindContext.cs",
+              "DocumentMoniker": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Models\\NorthwindContext.cs",
+              "RelativeDocumentMoniker": "EkartApplication\\Models\\NorthwindContext.cs",
+              "ToolTip": "D:\\DOTNET_TRAINING\\Mini_Project\\Assessment\\Assessment 3 Asp.NetCore_mvc\\EkartApplication\\EkartApplication\\Models\\NorthwindContext.cs",
+              "RelativeToolTip": "EkartApplication\\Models\\NorthwindContext.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAowEgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T04:37:15.311Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
